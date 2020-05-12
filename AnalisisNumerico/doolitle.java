@@ -1,6 +1,6 @@
 //Falta varias cosas
 package AnalisisNumerico;
-public class Doolitle {
+public class doolitle {
 	public static void main(String[] args) {
 	}
 	private static void MDoolitle(double a[][],double L[][], double U[][],int d) {
