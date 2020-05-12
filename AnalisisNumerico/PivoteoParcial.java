@@ -86,7 +86,7 @@ public class PivoteoParcial {
 					return c;
 				}
 	}
-	private static double[][] cambioFila(double[][] c, int k, int filam) {
+	private static double[][] cambioFila(double[][] c, int k, int filam) {//También cambia a U, pero como proceso "invisible".
 		double Mc[][] = new double[c.length][c.length];
 		double Cam[] = new double[c.length];
 		for(int i=0;i<c.length;i++) {
