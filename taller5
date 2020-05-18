@@ -1,5 +1,0 @@
-library (readr)
-
-urlfile="https://https://raw.githubusercontent.com/mauriciotoro/ST0245-Eafit/master/proyecto/datasets/0_train_balanced_15000.csv"
-
-mydata<-read_csv(url(urlfile))
