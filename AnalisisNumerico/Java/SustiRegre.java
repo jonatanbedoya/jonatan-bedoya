@@ -1,5 +1,5 @@
 package AnalisisNumerico;
-public class SustiRegre {
+public class SustiRegre {//Terminado
 	private static double x = 0;
 	private static double xn = 0;
 	public static double[] sustiRegre(double U[][],double z[],int d) {
