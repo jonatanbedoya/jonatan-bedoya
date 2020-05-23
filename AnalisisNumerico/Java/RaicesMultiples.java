@@ -1,6 +1,6 @@
 package AnalisisNumerico;
 import java.util.Scanner;
-public class RaicesMultiples {
+public class RaicesMultiples {//sin terminar
 	private static long fx, dfx, ddfx, den, xi, xn, tol, Er;
 	private static int niter, tole;
 	public static void main(String[] args) {
