@@ -1,6 +1,6 @@
 package AnalisisNumerico;
 import java.util.Scanner;
-public class ReglaFalsa {
+public class ReglaFalsa {//sin terminar
 	private static long xi, xs, tol, tole, xm, fxi, fxs, fxm, Er;
 	private static int niter;
 	public static void main(String[] args) {
