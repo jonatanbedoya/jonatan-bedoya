@@ -2,7 +2,7 @@ package AnalisisNumerico;
 public class doolitle {
 	public static void main(String[] args) {
 	}
-	private static void Mdoolitle(double a[][],double L[][], double U[][],int d) {
+	private static void Mdoolitle(double a[][],double L[][], double U[][],int d) {//sin terminar
 		for(int k=0;k<d;k++) {
 			for(int j=k;j<d;j++) {
 				double ac1=0;
