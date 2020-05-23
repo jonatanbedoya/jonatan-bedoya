@@ -1,6 +1,6 @@
 package AnalisisNumerico;
 import java.util.*;
-public class BusquedasIncrementales {
+public class BusquedasIncrementales {//sin terminar
 
 	private static double delta, x0, x1, fx0, fx1;
 	private static int niter;
@@ -13,7 +13,7 @@ public class BusquedasIncrementales {
 			x0 = a.nextDouble();
 			System.out.print("Ingrese el valor del paso (Delta): ");
 			delta = a.nextDouble();
-			System.out.print("Ingrese el número de iteraciones: ");
+			System.out.print("Ingrese el nÃºmero de iteraciones: ");
 			niter = a.nextInt();
 			while(niter<1 || delta==0) {
 				if(delta==0) {
@@ -21,20 +21,20 @@ public class BusquedasIncrementales {
 					System.out.print("Ingrese el valor del paso (Delta): ");
 					delta = a.nextDouble();
 				}else{
-						System.out.println("el número de iteraciones es incorrecto: ");
-						System.out.print("Ingrese el número de iteraciones: ");
+						System.out.println("el nÃºmero de iteraciones es incorrecto: ");
+						System.out.print("Ingrese el nÃºmero de iteraciones: ");
 						niter = a.nextInt();
 						}
 			}
-			//fx0 = f(x0) "¿Cómo lo podemos evaluar?"
+			//fx0 = f(x0) "Â¿CÃ³mo lo podemos evaluar?"
 			x1 = x0 + delta;
-			//fx1 = f(x1) "¿Cómo lo podemos evaluar?"
+			//fx1 = f(x1) "Â¿CÃ³mo lo podemos evaluar?"
 			int count = 1;
 			while(count<niter && fx1*fx0>0) {
 				x0 = x1;
 				/** fx0=fx1 */
 				x1 = x0 + delta;
-				//fx1 = f(x1) "¿Cómo lo podemos evaluar?"
+				//fx1 = f(x1) "Â¿CÃ³mo lo podemos evaluar?"
 				count = count +1;
 				if(fx1*fx0<0) {
 					System.out.println("Hay una raiz en intervalo: "+x0+ ","+x1);
