@@ -1,4 +1,4 @@
-function [Aux] = PivoteoParcialAuto()
+function [Aux] = PivoteoTotalAuto()
   #Funciona con cualquier matriz A nxn y b nx1
   #Se solicita el valor p donde 0 es L
   #para p=1 es U y para P>1 || p<0 es b modificada. 
@@ -36,17 +36,34 @@ function [Aux] = PivoteoParcialAuto()
   disp("Su vector b ingresado es: ");
   disp(b);
   c = [A, b];
-  Filam = 0; %Fila donde se encuentra el mayor.
+  Filam = 0;Colm = 0; %Fila donde se encuentra el mayor.
   ma = 0; m = 0;%ma es el mayor, y m es la multiplicidad por etapas.
   Auxi = 1:d;
   camfila = Auxi';
   AuxcamFila = Auxi';
+  camCol = Auxi';
+  AuxcamCol = Auxi';
   L = zeros(d);
   U = zeros(d);
+  AuxA = A;
   for k=1:d
     A = c;
-    [ma, Filam] = BuscarMayor(A,d,k);
-    if Filam!=k && k!=d
+    [ma, Filam, Colm] = BuscarMayor(A,d,k);
+    if Filam!=k && k!=d && Colm!=k
+      if ma==0
+        disp('No se pudo completar el proceso')
+        break;
+      else
+      camfila(k) = camfila(Filam);
+      camfila(Filam) = AuxcamFila(k);
+      AuxcamFila(Filam) = AuxcamFila(k);
+      camCol(k) = camCol(Colm);
+      camCol(Colm) = AuxcamCol(k);
+      AuxcamCol(Colm) = AuxcamCol(k);
+      c = cambioCol(c,k,Colm);
+      c = cambioFil(c,k,Filam); 
+      endif
+    elseif Filam!=k && k!=d && Colm==k
       if ma==0
         disp('No se pudo completar el proceso')
         break;
@@ -55,6 +72,16 @@ function [Aux] = PivoteoParcialAuto()
       camfila(Filam) = AuxcamFila(k);
       AuxcamFila(Filam) = AuxcamFila(k);
       c = cambioFil(c,k,Filam); 
+      endif
+    elseif Filam==k && k!=d && Colm!=k
+      if ma==0
+        disp('No se pudo completar el proceso')
+        break;
+      else
+      camCol(k) = camCol(Colm);
+      camCol(Colm) = AuxcamCol(k);
+      AuxcamCol(Colm) = AuxcamCol(k);
+      c = cambioCol(c,k,Colm);
       endif
     endif
       for i=k+1:d
@@ -76,7 +103,7 @@ function [Aux] = PivoteoParcialAuto()
   endfor
   if p==0
     disp("Su matriz L es: ")
-    L = cambioL(A,U,camfila);
+    L = cambioL(AuxA,U,camfila,camCol);
     Aux = L;
   elseif p==1
     disp("Su matriz U es: ")
@@ -85,27 +112,39 @@ function [Aux] = PivoteoParcialAuto()
     disp("Su vector b modificado es: ")
     Aux = cambioB(b,camfila);
   endif
- function [ma, Filam] = BuscarMayor(A,d,k)
+ function [ma, Filam, Colm] = BuscarMayor(A,d,k)
    ma = 0;
    for j=k:d
-     if abs(A(j,k))>abs(ma)
-       ma = A(j,k);
-       Filam = j;
+     for i=k:d
+       if abs(A(j,i))>abs(ma)
+         ma = A(j,i);
+         Filam = j;
+         Colm = i;
      endif
+     endfor
    endfor
+ endfunction
+  function AuxC = cambioCol(c,k,Colm)
+    AuxC = c;
+    AuxC(:,k) = AuxC(:,Colm);
+    AuxC(:,Colm) = c(:,k);
  endfunction
   function AuxC = cambioFil(c,k,Filam)
     AuxC = c;
     AuxC(k,:) = AuxC(Filam,:);
     AuxC(Filam,:) = c(k,:);
  endfunction
- function L = cambioL(A,U,camfila)
-   AuxA = A;
+ function L = cambioL(A,U,camfila, camCol)
+   ColA = zeros(length(camCol));
+   FilaA = zeros(length(camCol));
    AuxL = zeros(length(camfila));
-   for i=1:length(camfila)
-     A(i,:)= AuxA(camfila(i),:);
-     AuxA(camfila(i),:) = A(i,:);
+   for j=1:length(camCol)
+     ColA(:,j)= A(:,camCol(j));
+     for i=1:length(camCol)
+       FilaA(i,:)= ColA(camfila(i),:);
+     endfor
    endfor
+   A = FilaA;
    xn = 0;
    for k=1:length(camfila)
      for i=1:length(camfila)
