@@ -1,6 +1,6 @@
 package AnalisisNumerico;
 import java.util.Scanner;
-public class PuntoFijo {
+public class PuntoFijo {//sin terminar
 	private static long xi, tol, tole, xm, fxi, gxi, Er;
 	private static int niter;
 	public static void main(String[] args) {
