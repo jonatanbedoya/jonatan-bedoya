@@ -22,7 +22,6 @@ function [Aux] = EliminacionGaussSimple(A,b,p)
         c(i,j) = c(i,j) - m*c(k,j);
       endfor
       U(k,i) = c(k,i);
-      s = c(k,i);
     endfor
     U(k,k) = c(k,k);
   endfor
