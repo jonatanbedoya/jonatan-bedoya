@@ -1,5 +1,5 @@
 package AnalisisNumerico;
-public class EliminaciónGausSimple {
+public class EliminaciÃ³nGausSimple {//sin terminar
 	public static void main(String[] args) {
 		double A[][] = {{2,-3,4,1},{-4,2,1,-2},{1,3,-5,3},{-3,-1,1,-1}};
 		double B[] = {10,-10,32,-21};
