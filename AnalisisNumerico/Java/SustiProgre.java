@@ -1,6 +1,6 @@
 package AnalisisNumerico;
 
-public class SustiProgre {
+public class SustiProgre {//terminado
 	private static double xn = 0;
 	public static double[] sustiProgre(double L[][],double b[], int d) {
 		double z[] = new double[d];
