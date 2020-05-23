@@ -1,6 +1,6 @@
 package AnalisisNumerico;
 import java.util.Scanner;
-public class Newton {
+public class Newton {//sin terminar
 	private static long x0, x1, tol, tole, fx, dfx, Er;
 	private static int niter;
 	public static void main(String[] args) {
