@@ -1,6 +1,6 @@
 package AnalisisNumerico;
 import java.util.Scanner;
-public class Bisecci髇 {
+public class Bisecci贸n {//sin terminar
 	private static long xi, xs, tol, tole, xm, fxi, fxs, fxm, Er;
 	private static int niter;
 	public static void main(String[] args) {
@@ -15,7 +15,7 @@ public class Bisecci髇 {
 			System.out.print("ingrese la tolerancia (Solo el exponente positivo): ");
 			tole = a.nextLong();
 			tol = (long) Math.pow(10, -tole);
-			System.out.print("ingrese el n鷐ero de iteracciones: ");
+			System.out.print("ingrese el n煤mero de iteracciones: ");
 			niter = a.nextInt();	
 			while(xi==xs || tole<0 || niter<1) {
 				if(xi==xs) {
@@ -30,34 +30,34 @@ public class Bisecci髇 {
 					tole = a.nextLong();
 					tol = (long) Math.pow(10, -tole);
 				}else {
-					System.out.println("El n鷐ero de iteracciones es incorrecto");
-					System.out.print("ingrese el n鷐ero de iteracciones: ");
+					System.out.println("El n煤mero de iteracciones es incorrecto");
+					System.out.print("ingrese el n煤mero de iteracciones: ");
 					niter = a.nextInt();
 				}
 			}
-			//fxi = f(xi) "緾髆o lo podemos evaluar?"
-			//fxs = f(xs) "緾髆o lo podemos evaluar?"
+			//fxi = f(xi) "驴C贸mo lo podemos evaluar?"
+			//fxs = f(xs) "驴C贸mo lo podemos evaluar?"
 			if(fxi==0) {
 				System.out.print("Hay una raiz en: "+xi);
 			}else if(fxs==0) {
 				System.out.print("Hay una raiz en: "+xs);
 			}else if(fxi*fxs<0) {
 				xm = (xi+xs)/2;
-				//fxm = f(xm) "緾髆o lo podemos evaluar?"
+				//fxm = f(xm) "驴C贸mo lo podemos evaluar?"
 				int count = 1;
 				Er = tol+1;
 				while(Er>tol && fxm!=0 && count<niter) {
 					if(fxi*fxm<0) {
 						xs = xm;
-						//fxs = f(xs) "緾髆o lo podemos evaluar?"
+						//fxs = f(xs) "驴C贸mo lo podemos evaluar?"
 						xm = (xi+xs)/2;
-						//fxm = f(xm) "緾髆o lo podemos evaluar?"
+						//fxm = f(xm) "驴C贸mo lo podemos evaluar?"
 						Er = Math.abs(xm-xs);
 					}else {
 						xi=xm;
-						//fxi = f(xi) "緾髆o lo podemos evaluar?"
+						//fxi = f(xi) "驴C贸mo lo podemos evaluar?"
 						xm = (xi+xs)/2;
-						//fxm = f(xm) "緾髆o lo podemos evaluar?"
+						//fxm = f(xm) "驴C贸mo lo podemos evaluar?"
 						Er = Math.abs(xm-xi);
 					}
 					count = count +1;
