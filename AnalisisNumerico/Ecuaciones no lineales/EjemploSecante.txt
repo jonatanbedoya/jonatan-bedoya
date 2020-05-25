@@ -1,0 +1,12 @@
+Para la Función sin(x) - 4*x^2 + 2
+el primer valor: -0.6
+el segundo valor: -0.5
+el valor de la tolerancia(solo el exponente, positivo): 10
+el número de iteraciones: 100
+
+
+El programa dará como resultado: 
+Hay una raíz en:
+  -5.991742699407040e-01
+Con una tolerancia igual a:
+   1.000000000000001e-10

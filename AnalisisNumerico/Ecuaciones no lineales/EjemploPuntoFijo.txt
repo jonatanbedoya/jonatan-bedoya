@@ -1,0 +1,26 @@
+Ejemplo1
+Para la función F:  sin(x) - 4*x^2 + 2
+con la función G:  +sqrt((sin(x)+2)/4)
+el valor inicial: 0
+el valor de la tolerancia(solo el exponente, positivo): 10
+el número de iteraciones: 100
+
+El programa dará como resultado:
+Hay una raíz en:
+   8.270315582670762e-01
+Con una tolerancia igual a:
+   1.000000000000001e-10
+----------------------------------------------------------------------------------------------------------------------
+Ejemplo2
+Para la función F:  sin(x) - 4*x^2 + 2
+con la función G:  -sqrt((sin(x)+2)/4)
+el valor inicial: 0
+el valor de la tolerancia(solo el exponente, positivo): 10
+el número de iteraciones: 100
+
+
+El programa dará como resultado:
+Hay una raíz en:
+  -5.991742700017537e-01
+Con una tolerancia igual a:
+   1.000000000000001e-10

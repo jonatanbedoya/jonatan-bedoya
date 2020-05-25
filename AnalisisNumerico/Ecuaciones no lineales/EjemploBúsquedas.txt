@@ -1,0 +1,9 @@
+Para la Función sin(x) - 4*x^2 + 2
+si el valor inicial = -1
+el paso (Delta) = 0.1
+el número de iteracciones = 100
+
+
+El programa de Búsquedas Incrementales dará como resultado los intervalos.
+-0.60000  -0.50000
+ 0.80000   0.90000
